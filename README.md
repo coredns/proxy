@@ -1,7 +1,5 @@
 # proxy
 
-DOES NOT COMPILE YET, BECAUSE OF VENDORING IN COREDNS
-
 ## Name
 
 *proxy* - facilitates both a basic reverse proxy and a robust load balancer.
