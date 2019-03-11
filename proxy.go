@@ -11,8 +11,8 @@ import (
 
 	"github.com/coredns/coredns/plugin"
 	"github.com/coredns/coredns/plugin/metrics"
-	"github.com/coredns/coredns/plugin/pkg/healthcheck"
 	"github.com/coredns/coredns/request"
+	"github.com/coredns/proxy/healthcheck"
 
 	"github.com/miekg/dns"
 	ot "github.com/opentracing/opentracing-go"
