@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mholt/caddy/caddyfile"
+	"github.com/caddyserver/caddy/caddyfile"
 )
 
 func TestStop(t *testing.T) {

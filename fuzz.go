@@ -5,7 +5,7 @@ package proxy
 import (
 	"github.com/coredns/coredns/plugin/pkg/fuzz"
 
-	"github.com/mholt/caddy"
+	"github.com/caddyserver/caddy"
 )
 
 // Fuzz fuzzes proxy.
