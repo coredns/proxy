@@ -5,9 +5,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/coredns/caddy"
 	"github.com/coredns/coredns/plugin/test"
-
-	"github.com/caddyserver/caddy"
 )
 
 func TestAllowedDomain(t *testing.T) {

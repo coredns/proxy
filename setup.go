@@ -1,12 +1,10 @@
 package proxy
 
 import (
+	"github.com/coredns/caddy"
 	"github.com/coredns/coredns/core/dnsserver"
 	"github.com/coredns/coredns/plugin"
-	"github.com/coredns/coredns/plugin/metrics"
 	clog "github.com/coredns/coredns/plugin/pkg/log"
-
-	"github.com/caddyserver/caddy"
 )
 
 var log = clog.NewWithPlugin("proxy")
@@ -30,11 +28,6 @@ func setup(c *caddy.Controller) error {
 		P.Next = next
 		P.Upstreams = &upstreams
 		return P
-	})
-
-	c.OnStartup(func() error {
-		metrics.MustRegister(c, RequestCount, RequestDuration)
-		return nil
 	})
 
 	for i := range upstreams {

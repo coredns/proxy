@@ -4,17 +4,18 @@ import (
 	"github.com/coredns/coredns/plugin"
 
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promauto"
 )
 
 // Metrics the proxy plugin exports.
 var (
-	RequestCount = prometheus.NewCounterVec(prometheus.CounterOpts{
+	RequestCount = promauto.NewCounterVec(prometheus.CounterOpts{
 		Namespace: plugin.Namespace,
 		Subsystem: "proxy",
 		Name:      "request_count_total",
 		Help:      "Counter of requests made per protocol, proxy protocol, family and upstream.",
 	}, []string{"server", "proto", "proxy_proto", "family", "to"})
-	RequestDuration = prometheus.NewHistogramVec(prometheus.HistogramOpts{
+	RequestDuration = promauto.NewHistogramVec(prometheus.HistogramOpts{
 		Namespace: plugin.Namespace,
 		Subsystem: "proxy",
 		Name:      "request_duration_seconds",
